@@ -5,10 +5,13 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   padding: 10px 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #CCCCCC;
 `;
 
 export const Logo = styled(Link)`
-  font-size: 18px;
+  font-size: 16px;
+  text-transform: uppercase;
   font-weight: 700;
   color: black;
 `;
