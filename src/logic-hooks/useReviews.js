@@ -11,7 +11,7 @@ export default function useReviews() {
   async function getReviews() {
     setState({ isLoading: true })
     try {
-      const response = await fetch(`${API_URL}/reviews/all.json?order=${params.order}&api-key=${params["api-key"]}`)
+      const response = await fetch(`${API_URL}/reviews/picks.json?order=${params.order}&api-key=${params["api-key"]}`)
       const data = await response.json();
       setState({ isLoading: false, reviews: data.results });
     } catch(error) {
