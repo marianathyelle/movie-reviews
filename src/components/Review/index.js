@@ -4,7 +4,7 @@ const moment = require('moment');
 
 export const Review = ({ data }) => (
   <Container>
-    <Item to="/">
+    <Item to={`/review/${data.display_title}`}>
       <span>{moment(data.publication_date).format('ll')}</span>
         <Content>
           <h3>{data.display_title}</h3>

@@ -9,7 +9,9 @@ export const Container = styled.div`
 `;
 
 export const PageHeader = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
   
   h1 {
     font-size: 28px;

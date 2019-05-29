@@ -5,6 +5,7 @@ export default function useReviews() {
   const [state, setState] = useState({
     isLoading: false, 
     reviews: [],
+    review: {},
     error: false
   });
 
@@ -19,10 +20,15 @@ export default function useReviews() {
     }
   }
 
+  function getReviewDetail(id) {
+    const review = state.reviews.find(target => target.display_title === id);
+    setState({ review });
+  }
+
   useEffect(() => {
     getReviews();
     return () => void 0;
   }, []);
 
-  return state;
+  return { state, getReviewDetail };
 }
