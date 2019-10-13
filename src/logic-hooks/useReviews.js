@@ -27,7 +27,6 @@ export default function useReviews() {
 
   useEffect(() => {
     getReviews();
-    return () => void 0;
   }, []);
 
   return { state, getReviewDetail };
