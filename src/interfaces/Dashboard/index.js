@@ -5,14 +5,15 @@ import { ReviewList } from '../../components/ReviewList';
 import useReviews from '../../logic-hooks/useReviews';
 
 export const DashboardInterface = () => {
-  const { state } = useReviews();
+  const { reviews, loading  } = useReviews();
+
   return(
     <Container>
       <PageHeader>
         <h1>Movie Reviews</h1>
         <p>Our film critics on blockbusters, independents and everything in between.</p>
       </PageHeader>
-      {state.isLoading ? <Loading /> : <ReviewList reviews={state.reviews}/>}
+      {loading ? <Loading /> : <ReviewList reviews={reviews}/>}
     </Container>
   )
 }

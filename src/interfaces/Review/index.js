@@ -1,18 +1,22 @@
 import React from 'react';
 import { Container } from './styles';
-import useReviews from '../../logic-hooks/useReviews';
+import { useStateValue } from '../../state';
 
 export const ReviewInterface = (props) => {
   const { id } = props.match.params;
-  const { state, getReviewDetail } = useReviews();
+  const [{review}, dispatch] = useStateValue();
 
-  React.useLayoutEffect(() => {
-    getReviewDetail(id);
-  }, [getReviewDetail, id]);
+  React.useEffect(() => {
+    dispatch({
+      type: 'getDetail',
+      id
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id])
 
   return (
     <Container>
-      <h1>{state.review.display_title}</h1>
+      {console.log(review)}
     </Container>
   );
 }
